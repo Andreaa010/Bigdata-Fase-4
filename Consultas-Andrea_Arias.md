@@ -14,7 +14,7 @@ db.users.insertOne({
 });
 ```
 <p float="left">
-  <img src="Imagenes/Insertar un usuario.png" width="250" />
+  <img src="Imagenes/Insertar usuario.png" width="500" />
 </p>
 
 - Actualizar el stock de un producto
