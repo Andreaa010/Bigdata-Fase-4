@@ -6,11 +6,12 @@
 - Insertar un usuario
 ```bash
 db.users.insertOne({
+  id: 117,
   name: "Andrea Arias",
   email: "andrea@example.com",
   address: { city: "Armenia", street: "Calle 10" },
   phone: "3001234567",
-  registration_date: new Date()
+  registration_date: "2025-11-19T00:00:00.000+00:00"
 });
 ```
 <p float="left">
