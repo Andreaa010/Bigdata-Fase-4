@@ -25,6 +25,10 @@ db.products.updateOne(
   { $set: { stock: 70 } }
 );
 ```
+<p float="left">
+  <img src="Imagenes/Actualizar stock.png" width="500" />
+</p>
+
 
 - Mostrar usuarios cuyo nombre empiece por "A" y solo se muestra nombre y ciudad del usuario
 ```bash
@@ -33,6 +37,10 @@ db.users.find(
   { name: 1, "address.city": 1, _id: 0 }
 );
 ```
+<p float="left">
+  <img src="Imagenes/Mostrar usuarios.png" width="500" />
+</p>
+
 
 ---
 
@@ -42,6 +50,10 @@ db.users.find(
 ```bash
 db.products.find({ price: { $gt: 6000000 } });
 ```
+<p float="left">
+  <img src="Imagenes/Productos con precio mayor.png" width="500" />
+</p>
+
 
 - Buscar productos de una categoría específica y que solo me muestre el nombre y el stock
 ```bash
@@ -50,6 +62,10 @@ db.products.find(
   { name: 1, stock: 1, category_id: 1, _id: 0 }
 );
 ```
+<p float="left">
+  <img src="Imagenes/Buscar productos.png" width="500" />
+</p>
+
 
 - Productos con stock entre 35 y 50, y que muestra solo el nombre, precio y descripcion 
 ```bash
@@ -58,6 +74,10 @@ db.products.find(
   { name: 1, price: 1, description: 1, _id: 0 }
 );
 ```
+<p float="left">
+  <img src="Imagenes/Productos con stock.png" width="500" />
+</p>
+
 
 ---
 
@@ -70,6 +90,10 @@ db.users.aggregate([
   { $count: "total_users" }
 ]);
 ```
+<p float="left">
+  <img src="Imagenes/Contar usuarios.png" width="500" />
+</p>
+
 
 - Total de ventas por pedido
 ```bash
@@ -77,6 +101,10 @@ db.orders.aggregate([
   { $group: { _id: null, total_sales: { $sum: "$total" } } }
 ]);
 ```
+<p float="left">
+  <img src="Imagenes/Total ventas.png" width="500" />
+</p>
+
 
 - Promedio de calificación por producto
 ```bash
@@ -84,4 +112,9 @@ db.reviews.aggregate([
   { $group: { _id: "$product_id", avg_rating: { $avg: "$rating" } } }
 ]);
 ```
+<p float="left">
+  <img src="Imagenes/Promedio calificación.png" width="500" />
+</p>
+
+
 
