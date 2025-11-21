@@ -26,30 +26,37 @@ db.products.updateOne(
 );
 ```
 
-- Seleccionar todos los usuarios
+- Mostrar usuarios cuyo nombre empiece por "A" y solo se muestra nombre y ciudad del usuario
 ```bash
-db.users.find();
+db.users.find(
+  { name: { $regex: /^A/i } },
+  { name: 1, "address.city": 1, _id: 0 }
+);
 ```
 
 ---
 
 2.Consultas con filtros y operadores. 
 
-- Productos con un precio mayor a 500.000
+- Productos con un precio mayor a 6.000.000
 ```bash
-db.products.find({ price: { $gt: 500000 } });
+db.products.find({ price: { $gt: 6000000 } });
 ```
 
-- Buscar productos de una categoría específica
+- Buscar productos de una categoría específica y que solo me muestre el nombre y el stock
 ```bash
-db.products.find({ category_id: ObjectId("4") });
+db.products.find(
+  { category_id: 4) },
+  { name: 1, stock: 1, category_id: 1, _id: 0 }
+);
 ```
 
-- Productos con stock entre 35 y 50
+- Productos con stock entre 35 y 50, y que muestra solo el nombre, precio y descripcion 
 ```bash
-db.products.find({
-  stock: { $gte: 35, $lte: 50 }
-});
+db.products.find(
+  { stock: { $gte: 35, $lte: 50 } },
+  { name: 1, price: 1, description: 1, _id: 0 }
+);
 ```
 
 ---
